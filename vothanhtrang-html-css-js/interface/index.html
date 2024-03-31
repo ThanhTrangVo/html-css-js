@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/main.css">
+        
+    </head>
+    <body>
+        <div class="product-container">
+            <h1 class="center">LAPTOP DÀNH CHO HỌC TRỰC TUYẾN</h1>
+            <p class="center">Do ảnh hưởng của dịch Covid trong năm học mới này, nhiều học sinh tại một số tỉnh, thành phố như Hà Nội , TPHCM sẽ cải tiến hình thức học tập trực tuyến dẫn dến nhu cầu mua máy tính xách tay (laptop) đồ học online tăng cao so với mọi năm. Các mẫu laptop hỗ trợ tốt trong học tập trực tuyến có thể tham khảo:</p>
+            <div class="container">
+                <div class="item">
+                    <img src="../img/surface.jpg" alt="laptop surface">
+                    <h2>SURFACE LAPTOP 2.13.5</h2>
+                    <p>2023.03.12</p>
+                    <p>Thông tin sản phẩm và bảo hành</p>
+                    <p>Tình trạng: Sản phẩm mới 100%, nguyên siêu, bảo hành 12 tháng, 1 đổi 1 theo chính sách của Microsoft</p>
+                    <p>Phụ kiện: Máy, Sạc, Full Box</p>
+                    <button type="submit">Đọc tiếp</button>
+                </div>
+                <div class="item">
+                    <img src="../img/surface.jpg" alt="laptop surface">
+                    <h2>LAPTOP SAMSUMG 2.13.5</h2>
+                    <p>2023.03.12</p>
+                    <p>Thông tin sản phẩm và bảo hành</p>
+                    <p>Tình trạng: Sản phẩm mới 100%, nguyên siêu, bảo hành 12 tháng, 1 đổi 1 theo chính sách của SamSung</p>
+                    <p>Phụ kiện: Máy, Sạc, Full Box</p>
+                    <button type="submit">Đọc tiếp</button>
+                </div>
+                <div class="item">
+                    <img src="../img/surface.jpg" alt="laptop surface">
+                    <h2>ThinkPad X1 Carbon Gen9 2.13.5</h2>
+                    <p>2023.03.12</p>
+                    <p>Thông tin sản phẩm và bảo hành</p>
+                    <p>Tình trạng: Sản phẩm mới 100%, nguyên siêu, bảo hành 12 tháng, 1 đổi 1 theo chính sách của Lenovo</p>
+                    <p>Phụ kiện: Máy, Sạc, Full Box</p>
+                    <button type="submit">Đọc tiếp</button>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="form-container">
+                <div class="item1">
+                    <h1>LIÊN HỆ</h1>
+                </div>
+                <div class="item2">
+                    <p class="title">Thông tin</p>
+                    <div class="address">
+                        <img src="../img/icon-address.png" alt="icon address" width="25px">
+                        <input type="text" id="address" placeholder="Nhập địa chỉ">
+                    </div>
+                    <div class="mail">
+                        <img src="../img/icon-mail.png" alt="icon mail" width="25px">
+                        <input type="emai" id="email" placeholder="Nhập email">
+                    </div>
+                    <div class="phone">
+                        <img src="../img/icon-phone.png" alt="icon phone" width="25px">
+                        <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                    </div>
+                </div>
+                <div class="item3">
+                    <p class="title">Hãy liên lạc với chúng tôi bất cứ khi nào!!!</p>
+                    <form action="#" method="post">
+                        <input type="text" id="name" placeholder="Họ và tên">
+                        <input type="text" id="email" placeholder="Đại chỉ e-mail">
+                        <input type="text" id="title" placeholder="Tiêu đề bài viết">
+                        <textarea id="content" rows="10" placeholder="Nội dung cần gửi"></textarea>
+                        <button onclick="luutru()" >
+                            <p>GỬI TIN NHẮN</p>
+                            <img src="../img/icon-tick.png" alt="icon tick" width="20px">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="comment">
+            <h2>ĐÁNH GIÁ</h2>
+            <div class="comment-box">
+                <p id="user-name"></p>
+                <p id="date"></p>
+                <p id="user-comment"></p>
+
+            </div>
+
+        </div>
+        <script>
+            function luutru(){
+                const ten = document.getElementById("name").value;
+                const noidung = document.getElementById("content").value;
+
+                const formData ={
+                    ten,
+                    noidung
+                };
+
+                const users = [];
+                users.push(formData);
+
+                localStorage.setItem ("uesrs", JSON.stringigy(users));
+                alert("Lưu trữ thành công");
+
+                //truy xuat du lieu
+                for (const user of users){
+                    document.getElementById("user-name").innerHTML = "@" + user.ten;
+                    document.getElementById("user-comment").innerHTML = "@" + user.noidung;
+                }
+            } 
+        </script>
+    </body>
+</html>
